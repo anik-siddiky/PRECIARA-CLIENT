@@ -52,11 +52,8 @@ const Navbar = () => {
 
             <div className='bg-white grid grid-cols-3 lg:grid-cols-2 px-4 lg:px-12 justify-between items-center py-5 lg:py-4'>
                 <AiOutlineMenu className='lg:hidden md:block' size={26} />
-                <div className='flex items-center gap-7'>
-
-
-
-                    <h1 className='text-xl lg:text-2xl font-extrabold text-center'><Link to='/'>PRECIARA</Link></h1>
+                <div className='flex items-center lg:gap-7 justify-center lg:justify-normal'>
+                    <h1 className='text-xl lg:text-2xl font-extrabold'><Link to='/'>PRECIARA</Link></h1>
                     <div className='hidden lg:flex text-[11px] font-bold text-gray-700 space-x-2'>
                         <div className='flex items-center cursor-pointer'>
                             <span>RING</span>
