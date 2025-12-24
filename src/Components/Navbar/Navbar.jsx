@@ -6,6 +6,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Link } from 'react-router';
 import RingNavSection from './RingNavSection';
 import EarRingNavSection from './EarRingNavSection';
+import AllProductNavSection from './AllProductNavSection';
 
 const Navbar = () => {
 
@@ -60,10 +61,20 @@ const Navbar = () => {
                     <div className='hidden lg:flex text-[11px] font-bold text-gray-700 space-x-2'>
                         <div
                             className={`flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'ring' ? 'text-black' : ''}`}
+                            onMouseEnter={() => setActiveDropdown('allProducts')}>
+                            <span className='relative'>
+                                ALL PRODUCTS
+                                <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'allProducts' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                            </span>
+                            <MdKeyboardArrowDown />
+                        </div>
+
+                        <div
+                            className={`flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'ring' ? 'text-black' : ''}`}
                             onMouseEnter={() => setActiveDropdown('ring')}>
                             <span className='relative'>
                                 RING
-                                <span className={`absolute left-0 bottom-0 h-[2px] bg-gray-700 transition-all duration-500 ${activeDropdown === 'ring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'ring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                             </span>
                             <MdKeyboardArrowDown />
                         </div>
@@ -73,7 +84,7 @@ const Navbar = () => {
                             onMouseEnter={() => setActiveDropdown('earring')}>
                             <span className='relative'>
                                 EAR RING
-                                <span className={`absolute left-0 bottom-0 h-[2px] bg-gray-700 transition-all duration-500 ${activeDropdown === 'earring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'earring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                             </span>
                             <MdKeyboardArrowDown />
                         </div>
@@ -90,20 +101,28 @@ const Navbar = () => {
 
                     <div className='cursor-pointer group relative'>
                         <IoSearchOutline className='mt-0.5' size={23} />
-                        <span className='absolute left-0 w-0 h-[2px] bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
+                        <span className='absolute left-0 w-0 h-0.5 bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
                     </div>
 
                     <div className='cursor-pointer group relative'>
                         <IoPersonOutline size={22} />
-                        <span className='absolute left-0 w-0 h-[2px] bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
+                        <span className='absolute left-0 w-0 h-0.5 bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
                     </div>
 
                     <div className='cursor-pointer group relative'>
                         <IoBagOutline size={22} />
-                        <span className='absolute left-0 w-0 h-[2px] bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
+                        <span className='absolute left-0 w-0 h-0.5 bg-gray-700 transition-all duration-500 group-hover:w-full'></span>
                     </div>
                 </div>
             </div>
+            {activeDropdown === 'allProducts' && (
+                <div className='absolute left-0 right-0 z-50 bg-white shadow-lg'
+                    onMouseEnter={() => setActiveDropdown('allProducts')}
+                    onMouseLeave={() => setActiveDropdown(null)}>
+                    <AllProductNavSection/>
+                </div>
+            )}
+
             {activeDropdown === 'ring' && (
                 <div className='absolute left-0 right-0 z-50 bg-white shadow-lg'
                     onMouseEnter={() => setActiveDropdown('ring')}
