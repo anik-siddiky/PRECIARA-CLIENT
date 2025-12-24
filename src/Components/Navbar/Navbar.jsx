@@ -31,7 +31,18 @@ const Navbar = () => {
         }, 3000);
 
         return () => clearInterval(interval);
-    }, [])
+    }, [messages.length])
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (activeDropdown && !event.target.closest('.nav-dropdown-trigger') && !event.target.closest('.nav-dropdown-content')) {
+                setActiveDropdown(null);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [activeDropdown]);
 
     return (
         <div className='relative'>
@@ -46,9 +57,9 @@ const Navbar = () => {
                     </div>
 
                     <div className='justify-end space-x-3 hidden md:flex'>
-                        <Link>HELP</Link>
-                        <Link>WISHLIST</Link>
-                        <Link>JOIN US</Link>
+                        <Link to="/help">HELP</Link>
+                        <Link to="/wishlist">WISHLIST</Link>
+                        <Link to="/join">JOIN US</Link>
                     </div>
                 </div>
             </div>
@@ -60,8 +71,9 @@ const Navbar = () => {
                     <h1 className='text-xl lg:text-2xl font-extrabold'><Link to='/'>PRECIARA</Link></h1>
                     <div className='hidden lg:flex text-[11px] font-bold text-gray-700 space-x-2'>
                         <div
-                            className={`flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'ring' ? 'text-black' : ''}`}
-                            onMouseEnter={() => setActiveDropdown('allProducts')}>
+                            className={`nav-dropdown-trigger flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'allProducts' ? 'text-black' : ''}`}
+                            onMouseEnter={() => setActiveDropdown('allProducts')}
+                            onClick={() => setActiveDropdown(activeDropdown === 'allProducts' ? null : 'allProducts')}>
                             <span className='relative'>
                                 ALL PRODUCTS
                                 <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'allProducts' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -70,8 +82,9 @@ const Navbar = () => {
                         </div>
 
                         <div
-                            className={`flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'ring' ? 'text-black' : ''}`}
-                            onMouseEnter={() => setActiveDropdown('ring')}>
+                            className={`nav-dropdown-trigger flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'ring' ? 'text-black' : ''}`}
+                            onMouseEnter={() => setActiveDropdown('ring')}
+                            onClick={() => setActiveDropdown(activeDropdown === 'ring' ? null : 'ring')}>
                             <span className='relative'>
                                 RING
                                 <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'ring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -80,8 +93,9 @@ const Navbar = () => {
                         </div>
 
                         <div
-                            className={`flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'earring' ? 'text-black' : ''}`}
-                            onMouseEnter={() => setActiveDropdown('earring')}>
+                            className={`nav-dropdown-trigger flex items-center cursor-pointer group pb-6 -mb-6 ${activeDropdown === 'earring' ? 'text-black' : ''}`}
+                            onMouseEnter={() => setActiveDropdown('earring')}
+                            onClick={() => setActiveDropdown(activeDropdown === 'earring' ? null : 'earring')}>
                             <span className='relative'>
                                 EAR RING
                                 <span className={`absolute left-0 bottom-0 h-0.5 bg-gray-700 transition-all duration-500 ${activeDropdown === 'earring' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -116,15 +130,15 @@ const Navbar = () => {
                 </div>
             </div>
             {activeDropdown === 'allProducts' && (
-                <div className='absolute left-0 right-0 z-50 bg-white shadow-lg'
+                <div className='nav-dropdown-content absolute left-0 right-0 z-50 bg-white shadow-lg'
                     onMouseEnter={() => setActiveDropdown('allProducts')}
                     onMouseLeave={() => setActiveDropdown(null)}>
-                    <AllProductNavSection/>
+                    <AllProductNavSection />
                 </div>
             )}
 
             {activeDropdown === 'ring' && (
-                <div className='absolute left-0 right-0 z-50 bg-white shadow-lg'
+                <div className='nav-dropdown-content absolute left-0 right-0 z-50 bg-white shadow-lg'
                     onMouseEnter={() => setActiveDropdown('ring')}
                     onMouseLeave={() => setActiveDropdown(null)}>
                     <RingNavSection />
@@ -132,7 +146,7 @@ const Navbar = () => {
             )}
 
             {activeDropdown === 'earring' && (
-                <div className='absolute left-0 right-0 z-50 bg-white shadow-lg'
+                <div className='nav-dropdown-content absolute left-0 right-0 z-50 bg-white shadow-lg'
                     onMouseEnter={() => setActiveDropdown('earring')}
                     onMouseLeave={() => setActiveDropdown(null)}>
                     <EarRingNavSection />
