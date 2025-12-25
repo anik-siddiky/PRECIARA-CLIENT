@@ -6,6 +6,8 @@ import { Link } from 'react-router';
 import RingNavSection from './RingNavSection';
 import EarRingNavSection from './EarRingNavSection';
 import AllProductNavSection from './AllProductNavSection';
+import { IoCloseOutline } from 'react-icons/io5';
+import MobileDrawer from './MobileDrawer';
 
 const messages = [
     '30 DAYS RETURN',
@@ -50,6 +52,7 @@ const Navbar = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [fade, setFade] = useState(true);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -100,7 +103,13 @@ const Navbar = () => {
             </div>
 
             <div className='bg-white grid grid-cols-3 lg:grid-cols-2 px-4 lg:px-12 justify-between items-center py-5 lg:py-4'>
-                <AiOutlineMenu className='lg:hidden md:block cursor-pointer' size={26} />
+                <div className='lg:hidden cursor-pointer' onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+                    {isDrawerOpen ? (
+                        <IoCloseOutline size={28} />
+                    ) : (
+                        <AiOutlineMenu size={26} />
+                    )}
+                </div>
 
                 <div className='flex items-center lg:gap-7 justify-center lg:justify-normal'>
                     <h1 className='text-xl lg:text-2xl font-extrabold'>
@@ -151,6 +160,8 @@ const Navbar = () => {
                     <ActiveDropdownComponent />
                 </div>
             )}
+            <MobileDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+
         </div>
     );
 };
