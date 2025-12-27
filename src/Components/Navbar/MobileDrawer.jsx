@@ -30,15 +30,21 @@ const MobileDrawer = ({ isOpen, onClose }) => {
 
     return (
         <div
-            className={`lg:hidden fixed left-0 right-0 bg-white z-40 transition-all duration-500 ease-in-out ${isOpen
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 -translate-x-full pointer-events-none'
+            className={`lg:hidden fixed left-0 right-0 bottom-0 bg-white z-40 transition-all duration-500 ease-in-out flex flex-col ${isOpen
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-full pointer-events-none'
                 }`}
-            style={{ top: '110px', height: 'calc(100vh - 110px)' }}
+            style={{ top: '92px' }}
         >
+            {/* Tabs - Fixed */}
+            <div className='flex-shrink-0'>
+                <MobileDrawerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+            </div>
 
-            <MobileDrawerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-            <MobileDrawerContent activeTab={activeTab} />
+            {/* Content - Scrollable */}
+            <div className='flex-1 overflow-hidden'>
+                <MobileDrawerContent activeTab={activeTab} />
+            </div>
         </div>
     );
 };

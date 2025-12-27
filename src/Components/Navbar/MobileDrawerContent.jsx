@@ -137,7 +137,7 @@ const MobileDrawerContent = ({ activeTab }) => {
         const isActive = activeTab === tabName;
         
         if (isActive) {
-            return 'opacity-100 translate-x-0';
+            return 'opacity-100 translate-x-0 relative';
         }
         
         const currentIndex = tabIndex[activeTab];
@@ -151,18 +151,22 @@ const MobileDrawerContent = ({ activeTab }) => {
     };
 
     return (
-        <div className='overflow-y-auto scrollbar-hide h-full relative overflow-x-hidden'>
-            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('allProducts')}`}>
-                <AllProductsContent />
-            </div>
+        <div className='h-full overflow-y-auto overflow-x-hidden scrollbar-hide'>
+            <div className='relative'>
+                <div className={`transition-all duration-300 ease-in-out ${getTabClasses('allProducts')}`}>
+                    <AllProductsContent />
+                </div>
 
-            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('ring')}`}>
-                <RingContent />
-            </div>
+                <div className={`transition-all duration-300 ease-in-out ${getTabClasses('ring')}`}>
+                    <RingContent />
+                </div>
 
-            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('earring')}`}>
-                <EarringContent />
+                <div className={`transition-all duration-300 ease-in-out ${getTabClasses('earring')}`}>
+                    <EarringContent />
+                </div>
             </div>
+            
+            <div className='h-20'></div>
         </div>
     );
 };

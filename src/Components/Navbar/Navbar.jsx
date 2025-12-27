@@ -103,12 +103,17 @@ const Navbar = () => {
             </div>
 
             <div className='bg-white grid grid-cols-3 lg:grid-cols-2 px-4 lg:px-12 justify-between items-center py-4 lg:py-4'>
-                <div className='lg:hidden cursor-pointer' onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-                    {isDrawerOpen ? (
-                        <IoCloseOutline size={28} />
-                    ) : (
-                        <AiOutlineMenu size={26} />
-                    )}
+                <div
+                    className='lg:hidden cursor-pointer w-7 h-7 flex items-center justify-center'
+                    onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                    <div className={`transition-transform duration-300 ease-in-out ${isDrawerOpen ? 'rotate-180' : 'rotate-0'}`}>
+                        {isDrawerOpen ? (
+                            <IoCloseOutline size={26} />
+                        ) : (
+                            <AiOutlineMenu size={26} />
+                        )}
+                    </div>
                 </div>
 
                 <div className='flex items-center lg:gap-7 justify-center lg:justify-normal'>
