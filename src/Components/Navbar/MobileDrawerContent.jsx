@@ -126,12 +126,43 @@ const EarringContent = () => (
     </div>
 );
 
+const tabIndex = {
+    allProducts: 0,
+    ring: 1,
+    earring: 2
+};
+
 const MobileDrawerContent = ({ activeTab }) => {
+    const getTabClasses = (tabName) => {
+        const isActive = activeTab === tabName;
+        
+        if (isActive) {
+            return 'opacity-100 translate-x-0';
+        }
+        
+        const currentIndex = tabIndex[activeTab];
+        const thisIndex = tabIndex[tabName];
+        
+        if (thisIndex < currentIndex) {
+            return 'opacity-0 -translate-x-full absolute inset-0 pointer-events-none';
+        } else {
+            return 'opacity-0 translate-x-full absolute inset-0 pointer-events-none';
+        }
+    };
+
     return (
-        <div className='overflow-y-auto scrollbar-hide h-full'>
-            {activeTab === 'allProducts' && <AllProductsContent />}
-            {activeTab === 'ring' && <RingContent />}
-            {activeTab === 'earring' && <EarringContent />}
+        <div className='overflow-y-auto scrollbar-hide h-full relative overflow-x-hidden'>
+            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('allProducts')}`}>
+                <AllProductsContent />
+            </div>
+
+            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('ring')}`}>
+                <RingContent />
+            </div>
+
+            <div className={`transition-all duration-300 ease-in-out ${getTabClasses('earring')}`}>
+                <EarringContent />
+            </div>
         </div>
     );
 };
