@@ -6,6 +6,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.bbh-hegarty {
+  font-family: "BBH Hegarty", sans-serif;
+}
+
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

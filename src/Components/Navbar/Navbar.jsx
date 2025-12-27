@@ -102,7 +102,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className='bg-white grid grid-cols-3 lg:grid-cols-2 px-4 lg:px-12 justify-between items-center py-5 lg:py-4'>
+            <div className='bg-white grid grid-cols-3 lg:grid-cols-2 px-4 lg:px-12 justify-between items-center py-4 lg:py-4'>
                 <div className='lg:hidden cursor-pointer' onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
                     {isDrawerOpen ? (
                         <IoCloseOutline size={28} />
@@ -112,7 +112,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex items-center lg:gap-7 justify-center lg:justify-normal'>
-                    <h1 className='text-xl lg:text-2xl font-extrabold'>
+                    <h1 className='text-[22px] lg:text-2xl font-extrabold bbh-hegarty tracking-wide'>
                         <Link to='/'>PRECIARA</Link>
                     </h1>
 
