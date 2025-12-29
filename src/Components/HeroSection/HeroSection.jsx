@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 
 const HeroSection = () => {
     return (
-        <div className='relative h-[70vh] lg:h-screen w-full overflow-hidden'>
+        <div className='relative h-[70vh] lg:h-[calc(100vh-100px)] w-full overflow-hidden'>
             <video
                 autoPlay
                 muted
