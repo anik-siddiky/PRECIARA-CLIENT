@@ -1,9 +1,10 @@
 import React from 'react';
+import HeroSection from '../../Components/HeroSection/HeroSection';
 
 const Home = () => {
     return (
-        <div className='min-h-screen bg-gray-300 flex justify-center items-center'>
-            This is Home Page!
+        <div className='flex justify-center items-center'>
+            <HeroSection />
         </div>
     );
 };
