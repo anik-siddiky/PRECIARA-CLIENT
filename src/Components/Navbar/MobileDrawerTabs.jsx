@@ -6,19 +6,25 @@ const tabs = [
 
 const MobileDrawerTabs = ({ activeTab, setActiveTab }) => {
     return (
-        <div className='flex gap-1 p-3'>
-            {tabs.map((tab) => (
-                <button
-                    key={tab.name}
-                    onClick={() => setActiveTab(tab.name)}
-                    className={`flex-1 py-3 text-xs font-bold transition-all duration-300  ${activeTab === tab.name
-                            ? 'bg-white text-black shadow-[0_4px_0_0_#000] translate-y-0'
-                            : 'bg-gray-200 text-gray-500 shadow-[0_4px_0_0_#9ca3af] hover:-translate-y-0.5 hover:shadow-[0_6px_0_0_#9ca3af]'
-                        } active:translate-y-0.5 active:shadow-[0_2px_0_0_#000]`}
-                >
-                    {tab.label}
-                </button>
-            ))}
+        <div className='flex border-b border-gray-200'>
+            {tabs.map((tab) => {
+                const isActive = activeTab === tab.name;
+
+                return (
+                    <button
+                        key={tab.name}
+                        onClick={() => setActiveTab(tab.name)}
+                        className={`flex-1 py-4 text-xs font-bold transition-all duration-300 relative ${isActive
+                                ? 'bg-black text-white'
+                                : 'bg-white text-gray-400 hover:text-gray-600 hover:bg-gray-50'
+                            }`}>
+                        {tab.label}
+                        {isActive && (
+                            <span className='absolute bottom-0 left-0 right-0 h-0.5 bg-white'></span>
+                        )}
+                    </button>
+                );
+            })}
         </div>
     );
 };
