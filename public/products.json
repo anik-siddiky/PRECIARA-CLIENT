@@ -1,0 +1,309 @@
+[
+    {
+        "id": 1295478311,
+        "name": "Silver Butterfly Ring",
+        "slug": "silver-butterfly-ring",
+        "description": "Add a touch of whimsy to your everyday look with this adorable butterfly ring. Featuring a delicate butterfly design with sparkling cubic zirconia accents, this adjustable ring is perfect for any finger. Lightweight and comfortable, it's ideal for daily wear or gifting to someone special.",
+        "shortDescription": "Cute adjustable butterfly ring with CZ accents.",
+        "category": "ring",
+        "subcategory": "fashion",
+        "price": 65,
+        "originalPrice": 80,
+        "discount": 19,
+        "currency": "BDT",
+        "image": "/images/earring-1.jpg",
+        "images": [],
+        "size": "adjustable",
+        "availableSizes": [
+            "adjustable"
+        ],
+        "tags": [
+            "butterfly",
+            "cute",
+            "bestseller"
+        ]
+    },
+    {
+        "id": 2847593016,
+        "name": "Daisy Flower Earring",
+        "slug": "daisy-flower-ring-set",
+        "description": "Embrace the K-beauty trend with this charming 3-piece daisy flower ring set. Each ring features a different daisy design - perfect for mixing, matching, and stacking. Made from hypoallergenic alloy with enamel coating, these rings add a fresh, youthful vibe to any outfit.",
+        "shortDescription": "Trendy 3-piece daisy flower stackable ring set.",
+        "category": "ring",
+        "subcategory": "set",
+        "price": 120,
+        "originalPrice": 150,
+        "discount": 20,
+        "currency": "BDT",
+        "image": "/images/earring-2.jpg",
+        "images": [],
+        "size": "adjustable",
+        "availableSizes": [
+            "adjustable"
+        ],
+        "tags": [
+            "daisy",
+            "flower",
+            "set",
+            "korean",
+            "new arrival"
+        ]
+    },
+    {
+        "id": 3692841057,
+        "name": "Heart Chain Ring",
+        "slug": "heart-chain-ring",
+        "description": "Show your romantic side with this unique heart chain ring. Featuring a dangling heart charm connected by a delicate chain to the ring band, this piece moves beautifully with your hand. The perfect accessory for dates, parties, or whenever you want to add some charm to your look.",
+        "shortDescription": "Romantic ring with dangling heart chain charm.",
+        "category": "ring",
+        "subcategory": "fashion",
+        "price": 55,
+        "originalPrice": 70,
+        "discount": 21,
+        "currency": "BDT",
+        "image": "/images/ring-1.jpg",
+        "images": [],
+        "size": "adjustable",
+        "availableSizes": [
+            "adjustable"
+        ],
+        "tags": [
+            "heart",
+            "chain",
+            "romantic",
+            "trendy"
+        ]
+    },
+    {
+        "id": 4158723694,
+        "name": "Pearl Drop Earrings",
+        "slug": "pearl-drop-earrings",
+        "description": "Elevate your elegance with these classic Korean-style pearl drop earrings. Featuring high-quality faux pearls with a beautiful luster, these lightweight earrings are perfect for both casual outings and formal events. The simple yet sophisticated design complements any outfit.",
+        "shortDescription": "Elegant faux pearl drop earrings for everyday glam.",
+        "category": "earring",
+        "subcategory": "drop",
+        "price": 75,
+        "originalPrice": 90,
+        "discount": 17,
+        "currency": "BDT",
+        "image": "/images/earring-3.jpg",
+        "images": [],
+        "size": "standard",
+        "availableSizes": [
+            "standard"
+        ],
+        "tags": [
+            "pearl",
+            "elegant",
+            "korean",
+            "bestseller"
+        ]
+    },
+    {
+        "id": 5273946180,
+        "name": "Flower Stud Earrings Set",
+        "slug": "flower-stud-earrings-set",
+        "description": "Get 5 pairs of adorable flower stud earrings in one set! Each pair features a different pastel-colored flower design with crystal centers. Perfect for mixing and matching throughout the week. Made from hypoallergenic material, these studs are gentle on sensitive ears.",
+        "shortDescription": "Cute 5-pair pastel flower stud earrings set.",
+        "category": "earring",
+        "subcategory": "stud",
+        "price": 150,
+        "originalPrice": 180,
+        "discount": 17,
+        "currency": "BDT",
+        "image": "/images/earring-4.jpg",
+        "images": [],
+        "size": "standard",
+        "availableSizes": [
+            "standard"
+        ],
+        "tags": [
+            "flower",
+            "stud",
+            "set",
+            "pastel",
+            "new arrival"
+        ]
+    },
+    {
+        "id": 6384057291,
+        "name": "Moon Star Asymmetric Earrings",
+        "slug": "moon-star-asymmetric-earrings",
+        "description": "Make a celestial statement with these trendy asymmetric earrings. One earring features a crescent moon while the other showcases a sparkling star - a popular Korean fashion trend. The mismatched design adds a playful, unique touch to your accessory game.",
+        "shortDescription": "Trendy asymmetric moon and star drop earrings.",
+        "category": "earring",
+        "subcategory": "drop",
+        "price": 85,
+        "originalPrice": 100,
+        "discount": 15,
+        "currency": "BDT",
+        "image": "./images/earring-4.jpg",
+        "images": [],
+        "size": "standard",
+        "availableSizes": [
+            "standard"
+        ],
+        "tags": [
+            "moon",
+            "star",
+            "asymmetric",
+            "trendy",
+            "featured"
+        ]
+    },
+    {
+        "id": 7495168302,
+        "name": "Cherry Dangle Earrings",
+        "slug": "cherry-dangle-earrings",
+        "description": "Add a pop of cuteness with these sweet cherry dangle earrings. Featuring realistic-looking red cherries with green enamel leaves, these playful earrings are perfect for summer outfits, picnics, or anyone who loves fruit-inspired accessories. Lightweight and fun to wear!",
+        "shortDescription": "Adorable red cherry dangle earrings with enamel leaves.",
+        "category": "earring",
+        "subcategory": "dangle",
+        "price": 60,
+        "originalPrice": 75,
+        "discount": 20,
+        "currency": "BDT",
+        "image": "./images/earring-5.jpg",
+        "images": [],
+        "size": "standard",
+        "availableSizes": [
+            "standard"
+        ],
+        "tags": [
+            "cherry",
+            "cute",
+            "fruit",
+            "summer",
+            "bestseller"
+        ]
+    },
+    {
+        "id": 8506279413,
+        "name": "Smiley Face Ring",
+        "slug": "smiley-face-ring",
+        "description": "Spread positivity with this cheerful smiley face ring! Featuring a cute happy face design with colorful enamel, this fun ring is perfect for anyone who loves quirky accessories. Adjustable size fits most fingers. Guaranteed to make you smile every time you look at it!",
+        "shortDescription": "Fun and colorful smiley face enamel ring.",
+        "category": "ring",
+        "subcategory": "fashion",
+        "price": 45,
+        "originalPrice": 55,
+        "discount": 18,
+        "currency": "BDT",
+        "image": "./images/ring-2.jpg",
+        "images": [],
+        "size": "adjustable",
+        "availableSizes": [
+            "adjustable"
+        ],
+        "tags": [
+            "smiley",
+            "fun",
+            "colorful",
+            "quirky",
+            "bestseller"
+        ]
+    },
+    {
+        "id": 9617380524,
+        "name": "Layered Butterfly Necklace",
+        "slug": "layered-butterfly-necklace",
+        "description": "Embrace the Y2K revival with this gorgeous layered butterfly necklace. Featuring two delicate chains - one with a sparkling butterfly pendant and another with tiny crystal accents. This trendy piece is perfect for adding a feminine touch to any neckline, from t-shirts to dresses.",
+        "shortDescription": "Trendy double-layer butterfly pendant necklace.",
+        "category": "necklace",
+        "subcategory": "layered",
+        "price": 95,
+        "originalPrice": 120,
+        "discount": 21,
+        "currency": "BDT",
+        "image": "./images/necklace-1.jpg",
+        "images": [],
+        "size": "42-48 cm",
+        "availableSizes": [
+            "42-48 cm"
+        ],
+        "tags": [
+            "butterfly",
+            "layered",
+            "y2k",
+            "trendy",
+            "featured"
+        ]
+    },
+    {
+        "id": 1072849163,
+        "name": "Heart Pendant Choker",
+        "slug": "heart-pendant-choker",
+        "description": "Keep it cute and simple with this lovely heart pendant choker. The dainty heart charm hangs from a sleek chain that sits perfectly at your collarbone. Adjustable length makes it easy to style with any outfit. A must-have basic for every jewelry collection!",
+        "shortDescription": "Simple and sweet heart pendant choker necklace.",
+        "category": "necklace",
+        "subcategory": "choker",
+        "price": 55,
+        "originalPrice": 65,
+        "discount": 15,
+        "currency": "BDT",
+        "image": "./images/necklace-2.jpg",
+        "images": [],
+        "size": "32-38 cm",
+        "availableSizes": [
+            "32-38 cm"
+        ],
+        "tags": [
+            "heart",
+            "choker",
+            "simple",
+            "everyday"
+        ]
+    },
+    {
+        "id": 1183950274,
+        "name": "Beaded Flower Necklace",
+        "slug": "beaded-flower-necklace",
+        "description": "Channel your inner K-pop star with this adorable beaded flower necklace. Handcrafted with colorful acrylic beads and featuring cute flower accents, this playful piece adds a youthful, fresh vibe to any look. Perfect for festivals, concerts, or everyday fun!",
+        "shortDescription": "Colorful handmade beaded necklace with flower accents.",
+        "category": "necklace",
+        "subcategory": "beaded",
+        "price": 70,
+        "originalPrice": 85,
+        "discount": 18,
+        "currency": "BDT",
+        "image": "./images/necklace-3.jpg",
+        "images": [],
+        "size": "40-45 cm",
+        "availableSizes": [
+            "40-45 cm"
+        ],
+        "tags": [
+            "beaded",
+            "flower",
+            "colorful",
+            "kpop",
+            "new arrival"
+        ]
+    },
+    {
+        "id": 1294061385,
+        "name": "Aesthetic Ring",
+        "slug": "aesthetic-ring",
+        "description": "Achieve effortless elegance with this stunning pearl chain necklace. Featuring alternating faux pearls and delicate gold-tone chain links, this versatile piece transitions seamlessly from day to night. The adjustable clasp ensures a perfect fit for any neckline.",
+        "shortDescription": "Elegant pearl and chain link necklace for any occasion.",
+        "category": "necklace",
+        "subcategory": "chain",
+        "price": 85,
+        "originalPrice": 100,
+        "discount": 15,
+        "currency": "BDT",
+        "image": "./images/ring-3.jpg",
+        "images": [],
+        "size": "40-46 cm",
+        "availableSizes": [
+            "40-46 cm"
+        ],
+        "tags": [
+            "pearl",
+            "chain",
+            "elegant",
+            "versatile",
+            "featured"
+        ]
+    }
+]
