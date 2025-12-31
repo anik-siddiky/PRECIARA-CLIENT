@@ -3,8 +3,6 @@ import { useParams, Link } from 'react-router';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    IoHeartOutline,
-    IoHeart,
     IoShareSocialOutline,
     IoChevronForward,
     IoShieldCheckmark,
@@ -23,7 +21,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
 
-import ProductCard from '../Components/Reuseable/ProductCard';
+import ProductCard from '../../Components/Reuseable/ProductCard';
 
 const ProductPage = () => {
     const { slug } = useParams();
