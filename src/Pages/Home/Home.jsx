@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <HeroSection />
-            <div className='lg:max-w-7xl mx-auto px-4 lg:px-0 py-8 lg:py-12'>
+            <div className='lg:max-w-7xl mx-auto px-4 lg:px-0 py-7 lg:py-10'>
                 <FeaturedProducts />
             </div>
         </div>

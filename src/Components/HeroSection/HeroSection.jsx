@@ -18,7 +18,7 @@ const HeroSection = () => {
                 <p className='text-sm md:text-base lg:text-lg text-gray-300 max-w-xl mb-8 leading-relaxed'>
                     Discover timeless elegance with our exquisite collection of handcrafted jewelry.
                     Each piece tells a story of beauty and luxury.</p>
-                <div className='flex flex-col sm:flex-row gap-4'>
+                <div className='flex flex-col sm:flex-row lg:gap-4 gap-2'>
                     <Link to="/shop" className='lg:px-8 px-6 lg:py-3 py-2.5 bg-white text-black text-sm font-bold hover:bg-gray-200 transition-all duration-300'>SHOP NOW</Link>
                     <Link to="/collections" className='lg:px-8 px-6 lg:py-3 py-2.5 border border-white text-white text-sm font-bold hover:bg-white hover:text-black transition-all duration-300'>VIEW COLLECTIONS</Link>
                 </div>
