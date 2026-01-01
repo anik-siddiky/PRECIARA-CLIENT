@@ -34,14 +34,10 @@ const MobileDrawer = ({ isOpen, onClose }) => {
                 ? 'opacity-100 translate-x-0'
                 : 'opacity-0 -translate-x-full pointer-events-none'
                 }`}
-            style={{ top: '92px' }}
-        >
-            {/* Tabs - Fixed */}
+            style={{ top: '93px' }}>
             <div className='flex-shrink-0'>
                 <MobileDrawerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
-
-            {/* Content - Scrollable */}
             <div className='flex-1 overflow-hidden'>
                 <MobileDrawerContent activeTab={activeTab} />
             </div>

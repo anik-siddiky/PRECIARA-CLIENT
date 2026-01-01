@@ -35,6 +35,10 @@ const ProductPage = () => {
     const [showSizeGuide, setShowSizeGuide] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
+
+    useEffect(() => {
         fetch('/products.json')
             .then(res => res.json())
             .then(data => {
@@ -109,7 +113,6 @@ const ProductPage = () => {
 
     return (
         <div className='bg-white pb-20 lg:pb-0'>
-            {/* Breadcrumb */}
             <div className='border-b border-gray-100'>
                 <div className='lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-0 py-3 sm:py-4'>
                     <div className='flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-gray-500 overflow-x-auto whitespace-nowrap scrollbar-hide'>
@@ -126,65 +129,58 @@ const ProductPage = () => {
 
             <div className='lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-0 py-6 sm:py-8 lg:py-12'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16'>
-
-                    {/* Left - Image Gallery */}
                     <div className='space-y-3 sm:space-y-4'>
-                        
-                        {/* Badges - Simple, above the image */}
                         {(hasDiscount || isNewArrival || isBestSeller) && (
-                            <div className='flex items-center gap-1 sm:gap-1.5 lg:gap-2'>
+                            <div className='flex items-center gap-1 md:gap-1.5 lg:gap-2'>
                                 {hasDiscount && (
-                                    <span className='bg-black text-white text-[7px] sm:text-[8px] lg:text-[10px] font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5'>
+                                    <span className='bg-black text-white font-bold px-1.5 py-0.5 text-[8px] md:px-2 md:py-1 md:text-[10px] lg:px-3 lg:py-1.5 lg:text-xs'>
                                         −{discount}%
                                     </span>
                                 )}
                                 {isNewArrival && (
-                                    <span className='bg-white text-black text-[7px] sm:text-[8px] lg:text-[10px] font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5 border border-black'>
+                                    <span className='bg-white text-black font-bold px-1.5 py-0.5 text-[8px] md:px-2 md:py-1 md:text-[10px] lg:px-3 lg:py-1.5 lg:text-xs border border-black'>
                                         NEW
                                     </span>
                                 )}
                                 {isBestSeller && !isNewArrival && (
-                                    <span className='bg-gray-900 text-white text-[7px] sm:text-[8px] lg:text-[10px] font-bold px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5'>
-                                        ★ BEST
+                                    <span className='bg-gray-900 text-white font-bold px-1.5 py-0.5 text-[8px] md:px-2 md:py-1 md:text-[10px] lg:px-3 lg:py-1.5 lg:text-xs'>
+                                        BEST
                                     </span>
                                 )}
                             </div>
                         )}
-
-                        {/* Main Image */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
-                            className='relative aspect-square overflow-hidden bg-white'
-                        >
+                            className='relative aspect-square overflow-hidden bg-white'>
                             <Swiper
                                 spaceBetween={0}
                                 thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                                 zoom={true}
                                 modules={[FreeMode, Thumbs, Zoom]}
                                 className='h-full w-full'
-                            >
+                                style={{ height: '100%', width: '100%' }}>
                                 {productImages.map((img, index) => (
-                                    <SwiperSlide key={index}>
-                                        <div className='swiper-zoom-container h-full w-full'>
+                                    <SwiperSlide
+                                        key={index}
+                                        style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <div
+                                            className='swiper-zoom-container'
+                                            style={{ width: '100%', height: '100%' }}>
                                             <img
                                                 src={img}
                                                 alt={`${name} - ${index + 1}`}
                                                 className='w-full h-full object-cover'
-                                            />
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                         </div>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
-
-                            {/* Zoom hint - Desktop only */}
                             <div className='absolute bottom-3 right-3 lg:bottom-4 lg:right-4 z-10 bg-black/60 text-white text-[9px] lg:text-[10px] px-2 lg:px-3 py-1 lg:py-1.5 hidden lg:block'>
                                 PINCH TO ZOOM
                             </div>
                         </motion.div>
-
-                        {/* Thumbnails - Responsive */}
                         <Swiper
                             onSwiper={setThumbsSwiper}
                             spaceBetween={8}
@@ -196,8 +192,7 @@ const ProductPage = () => {
                             breakpoints={{
                                 640: { spaceBetween: 10 },
                                 1024: { spaceBetween: 12 }
-                            }}
-                        >
+                            }}>
                             {productImages.map((img, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='aspect-square cursor-pointer border-2 border-transparent hover:border-black transition-colors overflow-hidden'>
@@ -211,27 +206,19 @@ const ProductPage = () => {
                             ))}
                         </Swiper>
                     </div>
-
-                    {/* Right - Product Info */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className='space-y-4 sm:space-y-5 lg:space-y-6'
-                    >
-                        {/* Category */}
+                        className='space-y-4 sm:space-y-5 lg:space-y-6'>
+
                         <div className='flex items-center gap-2'>
                             <span className='text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-gray-500 uppercase'>{category}</span>
                             <span className='text-gray-300'>•</span>
                             <span className='text-[9px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-gray-500 uppercase'>{subcategory}</span>
                         </div>
+                        <h1 className='text-xl sm:text-2xl lg:text-3xl font-bold text-black leading-tight'>{name}</h1>
 
-                        {/* Title */}
-                        <h1 className='text-xl sm:text-2xl lg:text-3xl font-bold text-black leading-tight'>
-                            {name}
-                        </h1>
-
-                        {/* Rating */}
                         <div className='flex items-center gap-2 sm:gap-3'>
                             <div className='flex items-center gap-0.5 sm:gap-1'>
                                 {[...Array(5)].map((_, i) => (
@@ -241,12 +228,10 @@ const ProductPage = () => {
                             <span className='text-[10px] sm:text-xs text-gray-500'>(24 Reviews)</span>
                         </div>
 
-                        {/* Short Description */}
                         <p className='text-xs sm:text-sm text-gray-600 leading-relaxed'>
                             {shortDescription}
                         </p>
 
-                        {/* Price */}
                         <div className='flex items-end gap-2 sm:gap-3 flex-wrap'>
                             <span className='text-2xl sm:text-3xl font-bold text-black'>৳{price}</span>
                             {hasDiscount && (
@@ -259,10 +244,8 @@ const ProductPage = () => {
                             )}
                         </div>
 
-                        {/* Divider */}
                         <div className='h-px bg-gray-200'></div>
 
-                        {/* Size Selector */}
                         {availableSizes && availableSizes.length > 0 && (
                             <div className='space-y-2 sm:space-y-3'>
                                 <div className='flex items-center justify-between'>
@@ -270,8 +253,7 @@ const ProductPage = () => {
                                     {category === 'ring' && (
                                         <button
                                             onClick={() => setShowSizeGuide(true)}
-                                            className='text-[10px] sm:text-xs text-gray-500 underline hover:text-black transition-colors'
-                                        >
+                                            className='text-[10px] sm:text-xs text-gray-500 underline hover:text-black transition-colors'>
                                             Size Guide
                                         </button>
                                     )}
@@ -293,14 +275,12 @@ const ProductPage = () => {
                             </div>
                         )}
 
-                        {/* Quantity */}
                         <div className='space-y-2 sm:space-y-3'>
                             <span className='text-xs sm:text-sm font-medium text-black'>Quantity</span>
                             <div className='flex items-center'>
                                 <button
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                    className='w-9 h-9 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors'
-                                >
+                                    className='w-9 h-9 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors'>
                                     <IoRemove size={14} />
                                 </button>
                                 <div className='w-12 sm:w-14 h-9 sm:h-10 border-t border-b border-gray-300 flex items-center justify-center text-xs sm:text-sm font-medium'>
@@ -308,14 +288,12 @@ const ProductPage = () => {
                                 </div>
                                 <button
                                     onClick={() => setQuantity(quantity + 1)}
-                                    className='w-9 h-9 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors'
-                                >
+                                    className='w-9 h-9 sm:w-10 sm:h-10 border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors'>
                                     <IoAdd size={14} />
                                 </button>
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className='hidden sm:flex flex-col sm:flex-row gap-3'>
                             <button className='flex-1 bg-black text-white py-3 sm:py-4 text-xs sm:text-sm font-bold tracking-wider flex items-center justify-center gap-2 hover:bg-gray-900 transition-colors'>
                                 <TbShoppingCartPlus size={16} />
@@ -326,7 +304,6 @@ const ProductPage = () => {
                             </button>
                         </div>
 
-                        {/* Share */}
                         <div className='flex items-center gap-3 sm:gap-4'>
                             <span className='text-[10px] sm:text-xs text-gray-500'>Share:</span>
                             <div className='flex items-center gap-2 sm:gap-3'>
@@ -336,7 +313,6 @@ const ProductPage = () => {
                             </div>
                         </div>
 
-                        {/* Trust Badges - Responsive Grid */}
                         <div className='grid grid-cols-2 gap-3 sm:gap-4 py-4 sm:py-6 border-t border-b border-gray-200'>
                             <div className='flex items-center gap-2 sm:gap-3'>
                                 <IoCarOutline size={20} className='text-gray-700 flex-shrink-0' />
@@ -368,7 +344,6 @@ const ProductPage = () => {
                             </div>
                         </div>
 
-                        {/* Tags */}
                         <div className='flex items-center gap-2 flex-wrap'>
                             <span className='text-[10px] sm:text-xs text-gray-500'>Tags:</span>
                             {tags?.map((tag, index) => (
@@ -385,7 +360,6 @@ const ProductPage = () => {
                 </div>
             </div>
 
-            {/* Product Details Tabs */}
             <div className='bg-gray-50'>
                 <div className='lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-0 py-8 sm:py-10 lg:py-12'>
                     {/* Tab Headers */}
@@ -508,7 +482,6 @@ const ProductPage = () => {
                 </div>
             </div>
 
-            {/* Related Products */}
             {relatedProducts.length > 0 && (
                 <div className='lg:max-w-7xl mx-auto px-4 md:px-6 lg:px-0 py-10 sm:py-12 lg:py-16'>
                     <div className='text-center mb-8 sm:mb-10 lg:mb-12'>
@@ -524,7 +497,6 @@ const ProductPage = () => {
                 </div>
             )}
 
-            {/* Mobile Sticky Add to Cart */}
             <div className='sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]'>
                 <div className='flex items-center gap-3'>
                     <div className='flex-1 min-w-0'>
@@ -543,7 +515,6 @@ const ProductPage = () => {
                 </div>
             </div>
 
-            {/* Size Guide Modal */}
             <AnimatePresence>
                 {showSizeGuide && (
                     <motion.div
@@ -551,15 +522,13 @@ const ProductPage = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className='fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4'
-                        onClick={() => setShowSizeGuide(false)}
-                    >
+                        onClick={() => setShowSizeGuide(false)}>
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                             onClick={(e) => e.stopPropagation()}
-                            className='bg-white p-5 sm:p-6 max-w-sm w-full mx-4'
-                        >
+                            className='bg-white p-5 sm:p-6 max-w-sm w-full mx-4'>
                             <h3 className='text-base sm:text-lg font-bold mb-4'>Ring Size Guide</h3>
                             <div className='space-y-3 text-xs sm:text-sm text-gray-600'>
                                 <p>Our rings are adjustable and fit most finger sizes.</p>
@@ -581,11 +550,9 @@ const ProductPage = () => {
     );
 };
 
-// Skeleton Component - Matching Structure
 const ProductPageSkeleton = () => {
     return (
         <div className='bg-white'>
-            {/* Breadcrumb Skeleton */}
             <div className='border-b border-gray-100'>
                 <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-3 sm:py-4'>
                     <div className='h-3 sm:h-4 w-48 sm:w-64 bg-gray-200 rounded animate-pulse'></div>

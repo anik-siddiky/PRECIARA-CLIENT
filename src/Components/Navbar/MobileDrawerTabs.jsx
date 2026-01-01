@@ -14,7 +14,7 @@ const MobileDrawerTabs = ({ activeTab, setActiveTab }) => {
                     <button
                         key={tab.name}
                         onClick={() => setActiveTab(tab.name)}
-                        className={`flex-1 py-4 text-xs font-bold transition-all duration-300 relative ${isActive
+                        className={`flex-1 py-3 text-xs font-bold transition-all duration-300 relative ${isActive
                                 ? 'bg-black text-white'
                                 : 'bg-white text-gray-400 hover:text-gray-600 hover:bg-gray-50'
                             }`}>
