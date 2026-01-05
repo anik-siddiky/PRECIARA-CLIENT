@@ -14,7 +14,7 @@ const HeroSection = () => {
             </video>
             <div className='absolute inset-0 bg-black/40'></div>
             <div className='relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4'>
-                <p className='text-xs md:text-sm tracking-[0.3em] mb-4 text-gray-300 uppercase'>Exclusive Collection 2025</p>
+                <p className='text-xs md:text-sm tracking-[0.3em] mb-4 text-gray-300 uppercase'>Exclusive Collection 2026</p>
                 <p className='text-sm md:text-base lg:text-lg text-gray-300 max-w-xl mb-8 leading-relaxed'>
                     Discover timeless elegance with our exquisite collection of handcrafted jewelry.
                     Each piece tells a story of beauty and luxury.</p>
