@@ -7,7 +7,7 @@ const tabs = [
 
 const MobileDrawerTabs = ({ activeTab, setActiveTab }) => {
     return (
-        <div className='flex border-b border-gray-200'>
+        <div className='flex border-y border-gray-200'>
             {tabs.map((tab) => {
                 const isActive = activeTab === tab.name;
 
