@@ -83,7 +83,7 @@ const Navbar = () => {
     const ActiveDropdownComponent = activeDropdown ? dropdownComponents[activeDropdown] : null;
 
     return (
-        <div className='relative border-b border-gray-300 shadow'>
+        <div className='relative border-b border-gray-100 shadow'>
             <div className='bg-black text-white text-[11px] font-bold'>
                 <div className='lg:grid lg:grid-cols-3 items-center lg:py-2.5 md:py-2 py-1.5 px-12'>
                     <div></div>

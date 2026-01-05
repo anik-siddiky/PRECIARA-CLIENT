@@ -1,7 +1,8 @@
 const tabs = [
-    { name: 'allProducts', label: 'ALL PRODUCTS' },
+    { name: 'allProducts', label: 'ALL' },
     { name: 'ring', label: 'RING' },
-    { name: 'earring', label: 'EAR RING' }
+    { name: 'earring', label: 'EAR RING' },
+    {name: 'necklace', label: "NECKLACE"}
 ];
 
 const MobileDrawerTabs = ({ activeTab, setActiveTab }) => {

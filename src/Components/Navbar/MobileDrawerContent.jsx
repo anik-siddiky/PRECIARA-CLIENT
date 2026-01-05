@@ -12,6 +12,7 @@ import ring3 from '../../assets/rings/ring-3.jpg';
 import earRing1 from '../../assets/earrings/ear-ring-1.jpg';
 import earRing2 from '../../assets/earrings/ear-ring-2.jpg';
 import earRing3 from '../../assets/earrings/ear-ring-3.jpg';
+import NecklaceSection from './NecklaceSection';
 
 const ImageCard = ({ image, title }) => (
     <Link to="#" className='group cursor-pointer relative overflow-hidden rounded-lg h-40 block'>
@@ -163,6 +164,9 @@ const MobileDrawerContent = ({ activeTab }) => {
 
                 <div className={`transition-all duration-300 ease-in-out ${getTabClasses('earring')}`}>
                     <EarringContent />
+                </div>
+                <div className={`transition-all duration-300 ease-in-out ${getTabClasses('necklace')}`}>
+                    <NecklaceSection/>
                 </div>
             </div>
             

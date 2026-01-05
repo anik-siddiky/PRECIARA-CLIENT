@@ -133,7 +133,7 @@ const ProductPage = () => {
                         {(hasDiscount || isNewArrival || isBestSeller) && (
                             <div className='flex items-center gap-1 md:gap-1.5 lg:gap-2'>
                                 {hasDiscount && (
-                                    <span className='bg-black text-white font-bold px-1.5 py-0.5 text-[8px] md:px-2 md:py-1 md:text-[10px] lg:px-3 lg:py-1.5 lg:text-xs'>
+                                    <span className='bg-black text-white font-bold px-1.5 py-0.5 text-[10px] md:px-2 md:py-1 md:text-[10px] lg:px-3 lg:py-1.5 lg:text-xs'>
                                         −{discount}%
                                     </span>
                                 )}
